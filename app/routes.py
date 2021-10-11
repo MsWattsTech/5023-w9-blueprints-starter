@@ -75,7 +75,7 @@ def genre_list():
     genres = Genre.query.all()
     return render_template('genre_list.html', title = 'Genres', genres = genres)
 
-@app.route('/genes/add', methods = ['GET', 'POST'])
+@app.route('/genres/add', methods = ['GET', 'POST'])
 def genre_add():
     ''' A route for showing a form and processing form for adding a new genre. '''
     form = AddGenreForm()
