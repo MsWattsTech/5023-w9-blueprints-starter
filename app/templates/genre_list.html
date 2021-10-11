@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="py-2">All genres</h2>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Number of books</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for genre in genres %}
+        <tr>
+            <td>
+                <a href="{{ url_for('genre_details', id=genre.id) }}">
+                    {{ genre.name }}
+                </a>
+            </td>
+            <td>{{ genre.books | count }}</td>
+            <td>
+                <a class="btn btn-danger" href="{{ url_for('genre_delete', id=genre.id) }}">
+                    Delete
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<a class="btn btn-primary" href="{{ url_for('genre_add') }}">Add genre</a>
+{% endblock %}

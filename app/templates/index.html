@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My book collection</h2>
+<p>Manage:</p>
+<ul>
+    <li><a href="{{ url_for('book_list') }}">Books</a></li>
+    <li><a href="{{ url_for('genre_list') }}">Genres</a></li>
+</ul>
+{% endblock %}
