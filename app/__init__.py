@@ -16,6 +16,8 @@ from app import routes
 from app.models import Book, Genre
 
 # TODO: Register blueprints for books and genre blueprints here
+from app.book import bp as book_bp
+app.register_blueprint(book_bp, url_prefix='/book')
 
 @app.cli.command('init-db')
 def init_db():
